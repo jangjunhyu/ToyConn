@@ -22,7 +22,6 @@
   <li>입금 확인 및 대여상태 update기능</li>
   <li>게시판 입력, 수정 기능</li>
   <li>장난감 등록기능</li>
-  <li>유저별 장난감 거래 목록 출력 기능</li>
 </ul>
 
 <br>
@@ -70,4 +69,32 @@
     <li>상품 상태 '대여중'으로 바뀌고 다시 '반납확인'버튼 클릭 시 '대여가능'으로 변환</li>
   </ul>
   <img src="https://github.com/jangjunhyu/ToyConn/assets/120622212/90a18b52-9233-4cb0-8f05-97b9c88c3f81">
+
+  <br>
+  <h3>게시판 입력, 수정 기능</h3><a href="https://github.com/jangjunhyu/ToyConn/blob/e334d299381a4f8a75881a842e767e7cdb487d6d/ToyConn_project/src/main/webapp/board_list.jsp#L369">[코드확인]</a>
+  <hr>
+  <ul>
+    <li>게시판 등록 시 제목, 익명, 내용 입력 가능</li>
+    <li>수정 시 제목, 내용 수정</li>
+  </ul>
+  <img src="https://github.com/jangjunhyu/ToyConn/assets/120622212/c5f4d658-027e-4bba-9a7e-3f05215fa9c6">
+
+  <br>
+  <h3>장난감 등록기능</h3><a href="https://github.com/jangjunhyu/ToyConn/blob/e334d299381a4f8a75881a842e767e7cdb487d6d/ToyConn_project/src/main/webapp/toy_join.jsp#L389">[코드확인]</a>
+  <hr>
+  <ul>
+    <li>장난감 등록 시 상품 이미지, 상품명, 가격, 카테고리, 세부 사항 등록 가능</li>
+  </ul>
+  <img src="https://github.com/jangjunhyu/ToyConn/assets/120622212/edf0283f-3d16-43a5-b861-4fb8649fb4a0">
+
+  <br>
+  <h3>채팅기능</h3>
+  <a href="https://github.com/jangjunhyu/ToyConn/blob/e334d299381a4f8a75881a842e767e7cdb487d6d/ToyConn_project/src/main/webapp/message.jsp#L381C1-L381C1">[코드확인]</a>
+  <hr>
+  <ul>
+    <li>사용자가 해당 장난감 상세정보에서 채팅하기를 클릭하면 상대방과의 채팅 시작</li>
+    <li>'전송'버튼 클릭 시 채팅 보내기</li>
+    <li>내 닉네임과 보낸 날짜, 장난감 이름 표현</li>
+  </ul>
+  <img src="https://github.com/jangjunhyu/ToyConn/assets/120622212/69c65259-ceb2-4167-9ff3-2c5c0c736709">
 </details>
