@@ -28,13 +28,13 @@
 <br>
 <details>
 <summary><b>구현서비스 자세히 보기</b></summary>
-### 사용자 동일 동네 등록 장난감 리스트 출력 기능
+<h3> 사용자 동일 동네 등록 장난감 리스트 출력 기능</h3>
 <hr>
   <ul>
-    <li>
+    
       <li>로그인 사용자와 동일한 동네 사용자가 등록한 장난감 리스트 출력</li>
       <li>DB에서 이미지 이름, 장난감 명, 1일 가격, 상품 NUM 가져와 출력</li>
-    </li>
+    
   </ul>
   <img src="https://github.com/jangjunhyu/ToyConn/assets/120622212/7852fe8f-eb5b-445e-91dd-938171aeb399">
 </details>
