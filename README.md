@@ -28,7 +28,8 @@
 <br>
 <details>
 <summary><b>구현서비스 자세히 보기</b></summary>
-<h3> 사용자 동일 동네 등록 장난감 리스트 출력 기능</h3>![코드확인](https://github.com/jangjunhyu/ToyConn/blob/5dddbdff884eb636a595db881a67a2c1e79094ce/ToyConn_project/src/main/webapp/toy_list.jsp#L430)
+<h3> 사용자 동일 동네 등록 장난감 리스트 출력 기능</h3>
+![](https://github.com/jangjunhyu/ToyConn/blob/5dddbdff884eb636a595db881a67a2c1e79094ce/ToyConn_project/src/main/webapp/toy_list.jsp#L430)
 <hr>
   <ul>
       <li>로그인 사용자와 동일한 동네 사용자가 등록한 장난감 리스트 출력</li>
