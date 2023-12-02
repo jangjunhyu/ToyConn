@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="database.MemberInfoMapper">
+ 	<select id="firstJoinCheck" parameterType="String" resultType="MemberInfo">
+ 		SELECT * FROM MEMBER_INFO WHERE user_id=#{user_id}
+ 	</select>
+ 	<insert id="firstJoinAccount" parameterType="MemberInfo">
+ 		INSERT INTO MEMBER_INFO VALUES(#{user_id}, #{nick}, #{address}, #{score}, SYSDATE)
+ 	</insert>
+ 	<update id="changeAccount" parameterType="MemberInfo">
+ 		UPDATE MEMBER_INFO SET nick=#{nick}, address=#{address} WHERE user_id=#{user_id}
+ 	</update>
+ 	<delete id="deleteAccount" parameterType="MemberInfo">
+ 		DELETE FROM MEMBER_INFO WHERE user_id=#{user_id} AND nick=#{nick}
+ 	</delete>
+ 	<select id="getAddress" parameterType="String" resultType="String">
+		select address from member_info where user_id=#{id}
+	</select>
+		<select id="getAddressToys" resultType="model.addressToyDTO">
+		select product_info.p_num, member_info.address, product_info.user_id, product_info.category, product_info.p_name, product_info.rent_price, product_info.gender, product_info.image_file
+from member_info, product_info
+where member_info.user_id = product_info.user_id
+	</select>
+		<select id="getToyInfo" parameterType="String" resultType="model.ToyDTO">
+		select * from product_info where user_id=#{id}
+	</select>
+		<select id="getPayCheck" resultType="model.payCheckDTO">
+		select * from paycheck where user_id=#{#user_id}
+	</select>
+	<select id="getLendPayCheck" resultType="model.lenderPayCheckDTO">
+		select a.p_num, a.user_id, a.lender_id,a.p_name, a.price,a.toystate, a.lend, b.image_file
+from paycheck a, product_info b
+where a.p_num=b.p_num(+) and lender_id=#{lender_id}
+	</select>
+	<select id="getBoardList" resultType="model.boardDTO">
+		select * from board
+	</select>
+	<select id="getThisBoard" resultType="model.boardDTO" parameterType="int">
+		select * from board where board_num=#{board_num}
+	</select>
+	<update id="updateBoard" parameterType="model.updateBoardDTO">
+		update board set title=#{title}, text_content=#{text_content} where board_num=#{board_num}
+	</update>
+	<insert id="setBoard" parameterType="model.setBoardDTO">
+		insert into board values (BOARD_NUM.NEXTVAL, #{user_id}, #{title}, #{text_content}, #{anonymous}, sysdate)
+	</insert>
+	<select id="getToyAddress" parameterType="int" resultType="String">
+		select b.address from product_info a, member_info b where a.user_id=b.user_id and a.p_num=#{p_num}
+	</select>
+	<select id="getToy" resultType="model.ToyDTO" parameterType="int">
+		select * from product_info where p_num=#{p_num}
+	</select>
+	<select id="getMemberInfo" resultType="MemberInfo" parameterType="String">
+		select * from member_info where user_id=#{id}
+	</select>
+	<select id="getNick" resultType="String" parameterType="String">
+		select nick from member_info where user_id=#{id}
+	</select>
+	<update id="updateTakeState" parameterType="int">
+		update product_info set p_status='대여가능' where p_num=#{p_num}
+	</update>
+ </mapper>

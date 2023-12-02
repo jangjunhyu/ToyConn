@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace ="database.chattingMapper">
+	<insert id="setChatting" parameterType="model.chattingOneDTO">
+		insert into message_board values(num_chat.nextval, #{sender}, #{recipient}, #{text_content}, sysdate, #{p_num})
+	</insert>
+	<select id="getChatToyList" resultType="model.chattingDTO">
+		select * from message_board where chat_num in (select max(chat_num) from message_board where recipient=#{id} or sender=#{id} group by p_num)
+	</select>
+	<select id="getChattingList" parameterType="model.chattingListDTO" resultType="model.chattingDTO">
+		select *
+from message_board
+where (recipient=#{user_id} or sender=#{user_id}) and p_num=#{p_num}
+	</select>
+  </mapper>
